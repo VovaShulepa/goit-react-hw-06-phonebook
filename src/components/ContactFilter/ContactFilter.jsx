@@ -1,8 +1,8 @@
-import css from './ContactFilter.module.css';
+import css from "./ContactFilter.module.css";
 
-import { useDispatch, useSelector } from 'react-redux';
-import { filterContact } from 'redux/filterSlice/filterSlice';
-import { selectVisibleContacts } from 'redux/selectors';
+import { useDispatch, useSelector } from "react-redux";
+import { filterContact } from "redux/filterSlice/filterSlice";
+import { selectVisibleContacts } from "redux/selectors";
 
 export const ContactFilter = () => {
   const contacts = useSelector(selectVisibleContacts);
@@ -13,12 +13,12 @@ export const ContactFilter = () => {
       {contacts.length > 0 && (
         <div>
           <h2>Contacts 📑</h2>
-          <label className={css.filterLabel}>Find contacts by name </label>
+          <label className={css.filterLabel}>Find contact by name </label>
           <input
             className={css.filterName}
             type="text"
             name="filter"
-            onChange={e => {
+            onChange={(e) => {
               const { value } = e.target;
               const action = filterContact(value);
               dispatch(action);
