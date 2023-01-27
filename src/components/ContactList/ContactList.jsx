@@ -1,13 +1,11 @@
-import css from './ContactList.module.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/contactsSlice/contactsSlice';
-import { selectVisibleContacts } from 'redux/selectors';
+import css from "./ContactList.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteContact } from "redux/contactsSlice/contactsSlice";
+import { selectVisibleContacts } from "redux/selectors";
 
 export const ContactList = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectVisibleContacts);
-
-  // if (!contacts) return;
 
   return (
     <>
@@ -22,8 +20,7 @@ export const ContactList = () => {
                 onClick={() => {
                   const action = deleteContact(id);
                   dispatch(action);
-                }}
-              >
+                }}>
                 Delete
               </button>
             </li>
